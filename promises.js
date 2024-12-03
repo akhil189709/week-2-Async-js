@@ -49,5 +49,22 @@ function LogData2(data) {
 readFile("a.txt").then(LogData2);
 
 ///writing the promise class on our own
-
-
+class Promise2 {
+  constructor(fn) {
+    this.fn = fn;
+    fn(() => {
+      this.resolve();
+    });
+  }
+  then(callback) {
+    this.resolve = callback;
+  }
+}
+function print() {
+  return new Promise2((resolve) => {
+    setTimeout(resolve, 6000);
+  });
+}
+print().then(() => {
+  console.log("promise is resolved!");
+});

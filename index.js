@@ -16,11 +16,9 @@ function findSum(n) {
 let ans2 = findSum(100);
 console.log(`The sum till 100 is: ${ans2}`);
 
-const { log } = require("console");
-const { hkdf } = require("crypto");
+
 // //read the data from the file(synchronously);
 const fs = require("fs"); // this is the file system library to read the data of the file!
-const { addAbortSignal } = require("stream");
 
 const data = fs.readFileSync("a.txt", "utf-8");
 console.log(data);
